@@ -21,6 +21,7 @@ signature
 
 # feature
 feature -SOFTSERIAL
+feature -AIRMODE
 feature GPS
 feature TELEMETRY
 feature LED_STRIP
@@ -28,6 +29,9 @@ feature LED_STRIP
 # beacon
 beacon RX_LOST
 beacon RX_SET
+
+# map
+map TAER1234
 
 # serial
 serial 0 64 115200 57600 0 115200
@@ -51,8 +55,21 @@ led 12 5,1::L:0
 led 13 6,1::L:0
 
 # aux
-aux 0 0 0 1675 2075 0 0
-aux 1 1 1 900 2100 0 0
+aux 0 0 0 1925 2100 0 0
+aux 1 1 1 1925 2100 0 0
+aux 2 46 3 1850 2100 0 0
+aux 3 13 4 1850 2100 0 0
+aux 4 28 1 900 1075 0 0
+aux 5 31 1 1300 1700 0 0
+aux 6 35 2 1925 2100 0 0
+aux 7 36 5 1900 2100 0 0
+aux 8 37 2 1300 1700 0 0
+
+# rxrange
+rxrange 0 988 2011
+rxrange 1 988 2011
+rxrange 2 988 2011
+rxrange 3 988 2011
 
 # master
 set gyro_lowpass2_hz = 375
@@ -62,47 +79,62 @@ set dyn_notch_min_hz = 70
 set dyn_notch_max_hz = 350
 set dyn_lpf_gyro_min_hz = 300
 set dyn_lpf_gyro_max_hz = 750
-set acc_calibration = 22,24,-27,1
+set acc_calibration = 11,12,-28,1
 set mag_hardware = NONE
+set min_check = 1020
+set max_check = 1990
+set rssi_channel = 12
 set rc_smoothing_derivative_type = PT1
 set serialrx_provider = CRSF
-set blackbox_p_ratio = 16
 set dshot_idle_value = 800
 set dshot_bidir = ON
 set failsafe_off_delay = 15
 set failsafe_throttle = 1600
+set failsafe_procedure = GPS-RESCUE
 set vbat_scale = 111
 set beeper_dshot_beacon_tone = 2
 set yaw_motors_reversed = ON
 set small_angle = 180
 set gps_provider = UBLOX
 set gps_auto_baud = ON
-set yaw_deadband = 5
+set gps_rescue_angle = 45
+set gps_rescue_descent_dist = 100
+set gps_rescue_sanity_checks = RESCUE_SANITY_FS_ONLY
+set gps_rescue_min_sats = 6
+set gps_rescue_allow_arming_without_fix = ON
+set deadband = 10
+set yaw_deadband = 10
+set pid_process_denom = 2
+set osd_units = 
+###ERROR: diff: CORRUPTED CONFIG: osd_units = 17###
+set osd_rssi_alarm = 3
+set osd_cap_alarm = 1000
+set osd_alt_alarm = 1000
 set osd_vbat_pos = 455
-set osd_rssi_pos = 14680
-set osd_link_quality_pos = 481
+set osd_rssi_pos = 2543
+set osd_link_quality_pos = 365
 set osd_rssi_dbm_pos = 345
 set osd_tim_1_pos = 295
 set osd_tim_2_pos = 322
-set osd_flymode_pos = 6573
+set osd_flymode_pos = 2210
 set osd_throttle_pos = 441
 set osd_vtx_channel_pos = 355
-set osd_current_pos = 2400
-set osd_mah_drawn_pos = 2432
-set osd_craft_name_pos = 14799
+set osd_current_pos = 2403
+set osd_mah_drawn_pos = 2435
+set osd_craft_name_pos = 463
 set osd_display_name_pos = 490
-set osd_gps_speed_pos = 2455
-set osd_gps_lon_pos = 2304
-set osd_gps_lat_pos = 2336
-set osd_gps_sats_pos = 2423
-set osd_home_dir_pos = 2415
-set osd_home_dist_pos = 2542
-set osd_flight_dist_pos = 213
-set osd_altitude_pos = 2485
+set osd_gps_speed_pos = 2082
+set osd_gps_lon_pos = 2049
+set osd_gps_lat_pos = 2054
+set osd_gps_sats_pos = 2146
+set osd_home_dir_pos = 2127
+set osd_home_dist_pos = 2178
+set osd_flight_dist_pos = 100
+set osd_altitude_pos = 2113
 set osd_pidrate_profile_pos = 407
-set osd_warnings_pos = 14731
-set osd_avg_cell_voltage_pos = 14656
-set osd_disarmed_pos = 14752
+set osd_warnings_pos = 395
+set osd_avg_cell_voltage_pos = 2371
+set osd_disarmed_pos = 416
 set debug_mode = GYRO_SCALED
 set gyro_2_align_yaw = 900
 set gyro_rpm_notch_q = 800
