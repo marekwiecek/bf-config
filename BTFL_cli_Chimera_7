@@ -1,0 +1,165 @@
+# 
+
+# diff all
+
+# version
+# Betaflight / STM32F7X2 (S7X2) 4.2.4 Oct 20 2020 / 08:20:06 (fbcaf8c50) MSP API: 1.43
+# config: manufacturer_id: IFRC, board_name: IFLIGHT_F722_TWING, version: bc19b7dc, date: 2020-04-01T04:37:12Z
+
+# start the command batch
+batch start
+
+# reset configuration to default settings
+defaults nosave
+
+board_name IFLIGHT_F722_TWING
+manufacturer_id IFRC
+mcu_id 002c0017345650072030324b
+signature 
+
+# name: Chimera 7
+
+# feature
+feature -SOFTSERIAL
+feature GPS
+feature TELEMETRY
+feature LED_STRIP
+
+# beacon
+beacon RX_LOST
+beacon RX_SET
+
+# serial
+serial 0 64 115200 57600 0 115200
+serial 1 1 115200 57600 0 115200
+serial 3 2 115200 9600 0 115200
+
+# led
+led 0 0,0::L:1
+led 1 1,0::L:0
+led 2 2,0::L:0
+led 3 3,0::L:0
+led 4 4,0::L:0
+led 5 5,0::L:0
+led 6 6,0::L:0
+led 7 0,1::L:0
+led 8 1,1::L:0
+led 9 2,1::L:0
+led 10 3,1::L:0
+led 11 4,1::L:0
+led 12 5,1::L:0
+led 13 6,1::L:0
+
+# aux
+aux 0 0 0 1675 2075 0 0
+aux 1 1 1 900 2100 0 0
+
+# master
+set gyro_lowpass2_hz = 375
+set dyn_notch_width_percent = 0
+set dyn_notch_q = 250
+set dyn_notch_min_hz = 70
+set dyn_notch_max_hz = 350
+set dyn_lpf_gyro_min_hz = 300
+set dyn_lpf_gyro_max_hz = 750
+set acc_calibration = 22,24,-27,1
+set mag_hardware = NONE
+set rc_smoothing_derivative_type = PT1
+set serialrx_provider = CRSF
+set blackbox_p_ratio = 16
+set dshot_idle_value = 800
+set dshot_bidir = ON
+set failsafe_off_delay = 15
+set failsafe_throttle = 1600
+set vbat_scale = 111
+set beeper_dshot_beacon_tone = 2
+set yaw_motors_reversed = ON
+set small_angle = 180
+set gps_provider = UBLOX
+set gps_auto_baud = ON
+set yaw_deadband = 5
+set osd_vbat_pos = 455
+set osd_rssi_pos = 14680
+set osd_link_quality_pos = 481
+set osd_rssi_dbm_pos = 345
+set osd_tim_1_pos = 295
+set osd_tim_2_pos = 322
+set osd_flymode_pos = 6573
+set osd_throttle_pos = 441
+set osd_vtx_channel_pos = 355
+set osd_current_pos = 2400
+set osd_mah_drawn_pos = 2432
+set osd_craft_name_pos = 14799
+set osd_display_name_pos = 490
+set osd_gps_speed_pos = 2455
+set osd_gps_lon_pos = 2304
+set osd_gps_lat_pos = 2336
+set osd_gps_sats_pos = 2423
+set osd_home_dir_pos = 2415
+set osd_home_dist_pos = 2542
+set osd_flight_dist_pos = 213
+set osd_altitude_pos = 2485
+set osd_pidrate_profile_pos = 407
+set osd_warnings_pos = 14731
+set osd_avg_cell_voltage_pos = 14656
+set osd_disarmed_pos = 14752
+set debug_mode = GYRO_SCALED
+set gyro_2_align_yaw = 900
+set gyro_rpm_notch_q = 800
+set name = Chimera 7
+
+profile 0
+
+# profile 0
+set dyn_lpf_dterm_min_hz = 84
+set dyn_lpf_dterm_max_hz = 204
+set dyn_lpf_dterm_curve_expo = 6
+set dterm_lowpass2_hz = 180
+set vbat_sag_compensation = 100
+set anti_gravity_gain = 6000
+set feedforward_transition = 40
+set iterm_relax_cutoff = 10
+set yaw_lowpass_hz = 70
+set throttle_boost_cutoff = 10
+set p_pitch = 66
+set i_pitch = 99
+set d_pitch = 59
+set f_pitch = 125
+set p_roll = 61
+set i_roll = 94
+set d_roll = 55
+set f_roll = 119
+set p_yaw = 65
+set i_yaw = 99
+set f_yaw = 119
+set d_min_roll = 36
+set d_min_pitch = 40
+set ff_interpolate_sp = AVERAGED_3
+set ff_spike_limit = 55
+set ff_smooth_factor = 40
+
+profile 1
+
+profile 2
+
+# restore original profile selection
+profile 0
+
+rateprofile 0
+
+rateprofile 1
+
+rateprofile 2
+
+rateprofile 3
+
+rateprofile 4
+
+rateprofile 5
+
+# restore original rateprofile selection
+rateprofile 0
+
+# save configuration
+save
+# 
