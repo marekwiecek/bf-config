@@ -3,7 +3,7 @@
 # diff all
 
 # version
-# Betaflight / STM32F7X2 (S7X2) 4.2.4 Oct 20 2020 / 08:20:06 (fbcaf8c50) MSP API: 1.43
+# Betaflight / STM32F7X2 (S7X2) 4.2.9 Apr 27 2021 / 19:34:29 (e097f4ab7) MSP API: 1.43
 # config: manufacturer_id: IFRC, board_name: IFLIGHT_F722_TWING, version: bc19b7dc, date: 2020-04-01T04:37:12Z
 
 # start the command batch
@@ -71,6 +71,9 @@ rxrange 1 988 2011
 rxrange 2 988 2011
 rxrange 3 988 2011
 
+# rxfail
+rxfail 5 s 1000
+
 # master
 set gyro_lowpass2_hz = 375
 set dyn_notch_width_percent = 0
@@ -80,8 +83,6 @@ set dyn_notch_max_hz = 350
 set dyn_lpf_gyro_min_hz = 300
 set dyn_lpf_gyro_max_hz = 750
 set acc_calibration = -68,-22,-33,1
-set mag_hardware = NONE
-set baro_hardware = NONE
 set min_check = 1020
 set max_check = 1990
 set rssi_channel = 12
@@ -109,8 +110,6 @@ set gps_rescue_min_sats = 6
 set gps_rescue_allow_arming_without_fix = ON
 set deadband = 10
 set yaw_deadband = 10
-set osd_units = 
-###ERROR: diff: CORRUPTED CONFIG: osd_units = 17###
 set osd_rssi_alarm = 3
 set osd_cap_alarm = 1000
 set osd_alt_alarm = 1000
