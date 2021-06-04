@@ -1,4 +1,6 @@
-diff all
+# 
+
+# diff all
 
 # version
 # Betaflight / STM32F7X2 (S7X2) 4.2.5 Nov 22 2020 / 18:39:53 (afdac08b3) MSP API: 1.43
@@ -20,7 +22,6 @@ signature
 # feature
 feature -SOFTSERIAL
 feature -AIRMODE
-feature GPS
 
 # beeper
 beeper -GYRO_CALIBRATED
@@ -40,7 +41,6 @@ beeper -CAM_CONNECTION_CLOSE
 beeper -RC_SMOOTHING_INIT_FAIL
 
 # beacon
-beacon RX_LOST
 beacon RX_SET
 
 # map
@@ -50,18 +50,16 @@ map TAER1234
 serial 0 0 115200 57600 0 115200
 serial 1 64 115200 57600 0 115200
 serial 2 128 115200 57600 0 2000000
-serial 4 2 115200 57600 0 115200
 serial 5 1 115200 57600 0 115200
 
 # aux
 aux 0 0 0 1850 2100 0 0
 aux 1 1 1 1700 2100 0 0
-aux 2 46 3 1875 2100 0 0
-aux 3 13 4 1900 2100 0 0
-aux 4 28 1 900 1300 0 0
-aux 5 31 1 1300 1700 0 0
-aux 6 35 2 1925 2100 0 0
-aux 7 36 5 1875 2100 0 0
+aux 2 13 4 1900 2100 0 0
+aux 3 28 1 900 1300 0 0
+aux 4 31 1 1300 1700 0 0
+aux 5 35 2 1925 2100 0 0
+aux 6 36 5 1875 2100 0 0
 
 # rxrange
 rxrange 0 988 2011
@@ -72,7 +70,7 @@ rxrange 3 988 2011
 # rxfail
 rxfail 6 s 1000
 rxfail 7 s 1000
-rxfail 8 s 2000
+rxfail 8 s 1000
 rxfail 11 s 1000
 
 # master
@@ -90,7 +88,6 @@ set rssi_channel = 12
 set serialrx_provider = CRSF
 set dshot_bidir = ON
 set failsafe_delay = 2
-set failsafe_procedure = GPS-RESCUE
 set failsafe_stick_threshold = 10
 set bat_capacity = 700
 set ibata_scale = 132
